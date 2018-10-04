@@ -1,7 +1,18 @@
 #!/usr/bin/env bash
 
 rm -f ../src/main/resources/generated_files/$1*
+if [ $? -eq 0 ]; then
+    echo $1 removed from resources/generated_files
+else
+    echo No $1 files exist on resources/generated_files
+fi
+
 docker exec converter rm $1*
+if [ $? -eq 0 ]; then
+    echo $1 removed from converter
+else
+    echo No $1 files exist on converter
+fi
 
 docker cp ../upload-dir/$1.pdf converter:/root
 
@@ -16,4 +27,11 @@ docker exec converter tesseract -psm 4 -l deu $1_only_green.tiff $1_only_green
 docker cp converter:/root/$1_only_green.txt ../src/main/resources/generated_files
 
 docker exec converter rm $1*
+if [ $? -eq 0 ]; then
+    echo $1 removed from converter
+else
+    echo No $1 files exist on converter
+fi
+
+
 
