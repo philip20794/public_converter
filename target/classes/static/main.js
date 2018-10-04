@@ -597,8 +597,7 @@ var ErrorService = /** @class */ (function () {
         else {
             // The backend returned an unsuccessful response code.
             // The response body may contain clues as to what went wrong,
-            console.error("Backend returned code " + error.status + ", " +
-                ("body was: " + error.error));
+            console.error("Backend returned code " + error.status + ", \n        " + ("statusText was: " + error.statusText));
         }
         // return an observable with a user-facing error message
         return Object(rxjs__WEBPACK_IMPORTED_MODULE_1__["throwError"])('Something bad happened; please try again later.');
@@ -751,7 +750,7 @@ var UploadComponent = /** @class */ (function () {
         this.changeFileNameEvent.emit(this.fileName);
         this.requestService.uploadFile(this.http, file)
             .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["catchError"])(function (err) {
-            _this.errorEvent.emit(err.error);
+            _this.errorEvent.emit(err.statusText);
             return _this.error.handleError(err);
         }))
             .subscribe(function (response) {

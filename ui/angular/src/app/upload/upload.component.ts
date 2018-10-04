@@ -52,7 +52,7 @@ export class UploadComponent implements OnInit {
 
     this.requestService.uploadFile(this.http, file)
       .pipe(catchError(err => {
-        this.errorEvent.emit(err.error);
+        this.errorEvent.emit(err.statusText);
         return this.error.handleError(err);
       }))
       .subscribe(response => {
