@@ -15,7 +15,7 @@ public class Variables {
     public static String fileName = "";
     public static XWPFDocument doc = null;
     public static String stringPathGeneratedFilesWindows = ".\\src\\main\\resources\\generated_files\\";
-    public static String stringPathGeneratedFiles = "../src/main/resources/generated_files/";
+    public static String stringPathGeneratedFiles = "src/main/resources/generated_files/";
     public static String text_form_abiWord;
     public static String ocr_only_green;
     public static String text_from_html;
@@ -32,7 +32,7 @@ public class Variables {
     public static float BULLETPOINT_ZEILENBEGINN;
     public static float B_KRITERIEN_ZEILENBEGINN;
     public static String pathDocVorlageWindows = ".\\Word-Vorlage\\adesso_template.dotx";
-    public static String pathDocVorlage = "../Word-Vorlage/adesso_template.dotx";
+    public static String pathDocVorlage = "Word-Vorlage/adesso_template.dotx";
     public static String hintSprachkentnisse = "Muttersprache ist Deutsch;\n" +
             "Englisch IELTS-Prüfung mit 6.5 abgeschlossen (=B2)";
 
