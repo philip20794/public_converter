@@ -49,7 +49,7 @@ public class WebController{
             return ResponseEntity.ok().body("File Uploaded");
         } catch (Exception e) {
             System.out.println(e.getMessage());
-            return ResponseEntity.badRequest().body(e.getMessage());
+            return ResponseEntity.badRequest().body("Uploading Error");
         }
 
     }
@@ -63,7 +63,7 @@ public class WebController{
             return ResponseEntity.ok().body("File Converted");
         } catch (Exception e) {
             System.out.println(e.getMessage());
-            return ResponseEntity.badRequest().body(e.getMessage());
+            return ResponseEntity.badRequest().body("Converting Error");
         }
     }
 
@@ -99,7 +99,7 @@ public class WebController{
             return ResponseEntity.ok().body("");
         }catch (Exception e){
             System.out.println(e.getMessage());
-            return ResponseEntity.badRequest().body(e.getMessage());
+            return ResponseEntity.badRequest().body("Unexpected Error");
         }
     }
 
