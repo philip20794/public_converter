@@ -8,11 +8,7 @@ docker exec converter rm $1.txt
 docker exec converter rm $1_only_green.txt
 docker exec converter rm $1_only_green.tiff
 
-docker exec converter ls -a
-
 docker cp ../upload-dir/$1.pdf converter:/root
-
-
 
 docker exec converter pdftotext -bbox $1.pdf
 docker exec converter mv /root/$1.html /root/$1_html.txt
@@ -24,12 +20,9 @@ docker exec converter convert -density 300 $1.pdf -fuzz 33%% +opaque "#33cc33" -
 docker exec converter tesseract -psm 4 -l deu $1_only_green.tiff $1_only_green
 docker cp converter:/root/$1_only_green.txt ../src/main/resources/generated_files
 
-docker exec converter ls -a
-
 docker exec converter rm $1_html.txt
 docker exec converter rm $1.tex
 docker exec converter rm $1.pdf
-docker exec converter rm $1.tiff
 docker exec converter rm $1.txt
 docker exec converter rm $1_only_green.txt
 docker exec converter rm $1_only_green.tiff
