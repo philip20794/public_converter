@@ -44,7 +44,8 @@ if [ $? -eq 0 ]; then
         echo No $1 files exist on converter
     fi
 else
-    echo $1 dosent exist
+    echo $1 dosent exist on upload-dir.
+    ls ../upload-dir/
 fi
 
 
