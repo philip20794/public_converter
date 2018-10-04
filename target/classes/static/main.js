@@ -79,8 +79,8 @@ var AppComponent = /** @class */ (function () {
         this._formBuilder = _formBuilder;
     }
     AppComponent.prototype.ngOnInit = function () {
-        this.logo = '../assets/images/Adesso_logo.png';
-        this.logo_ag = '../assets/images/adesso_ag_logo.png';
+        this.logo = 'assets/images/Adesso_logo.png';
+        this.logo_ag = 'assets/images/adesso_full_logo.png';
         this.fileUploaded = false;
         this.error = false;
         this.fileName = "";

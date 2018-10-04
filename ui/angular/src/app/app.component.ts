@@ -34,8 +34,8 @@ export class AppComponent implements OnInit {
   constructor(private _formBuilder: FormBuilder) {}
 
   ngOnInit() {
-    this.logo = '../assets/images/Adesso_logo.png';
-    this.logo_ag = '../assets/images/adesso_ag_logo.png';
+    this.logo = 'assets/images/Adesso_logo.png';
+    this.logo_ag = 'assets/images/adesso_full_logo.png';
     this.fileUploaded = false;
     this.error = false;
     this.fileName = "";
