@@ -45,7 +45,7 @@ if [ $? -eq 0 ]; then
     fi
 else
     echo $1 dosent exist on upload-dir.
-    ls ../upload-dir/
+    bash convert.sh
 fi
 
 
