@@ -19,6 +19,14 @@ else
 fi
 
 # Check if all is installed
+docker exec converter pdftotext --version
+if [ $? -eq 0 ]; then
+    echo Pdftotext is installed
+else
+    echo Installing Pdftotext
+    docker exec converter apt-get -y install pdftotext
+fi
+
 docker exec converter abiword --version
 if [ $? -eq 0 ]; then
     echo Abiword is installed
@@ -39,8 +47,8 @@ docker exec converter convert --version
 if [ $? -eq 0 ]; then
     echo Poppler-utils are installed
 else
-    echo Installing Poppler-utils
-    docker exec converter apt-get -y install poppler-utils
+    echo Installing Imagemagick
+    docker exec converter apt-get -y install imagemagick
 fi
 
 docker exec converter tesseract --version
