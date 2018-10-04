@@ -7,7 +7,12 @@ else
     echo No $1 files exist on resources/generated_files
 fi
 
-docker exec converter rm $1*
+docker exec converter rm $1.pdf
+docker exec converter rm $1.tex
+docker exec converter rm $1.txt
+docker exec converter rm $1_html.txt
+docker exec converter rm $1_only_green.tiff
+docker exec converter rm $1_only_green.txt
 if [ $? -eq 0 ]; then
     echo $1 removed from converter
 else
@@ -27,7 +32,12 @@ if [ $? -eq 0 ]; then
     docker exec converter tesseract -psm 4 -l deu $1_only_green.tiff $1_only_green
     docker cp converter:/root/$1_only_green.txt ../src/main/resources/generated_files
 
-    docker exec converter rm $1*
+    docker exec converter rm $1.pdf
+    docker exec converter rm $1.tex
+    docker exec converter rm $1.txt
+    docker exec converter rm $1_html.txt
+    docker exec converter rm $1_only_green.tiff
+    docker exec converter rm $1_only_green.txt
     if [ $? -eq 0 ]; then
         echo $1 removed from converter
     else
