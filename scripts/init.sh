@@ -19,7 +19,7 @@ else
 fi
 
 # Check if all is installed
-docker exec converter pdftotext --version
+docker exec converter pdftotext -v
 if [ $? -eq 0 ]; then
     echo Pdftotext is installed
 else

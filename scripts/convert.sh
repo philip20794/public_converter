@@ -1,8 +1,6 @@
 #!/usr/bin/env bash
 
-rm ../src/main/resources/file.txt
-rm ../src/main/resources/output.txt
-rm ../src/main/resources/file_only_green.txt
+rm ../src/main/resources/generated_files/$1*
 docker exec converter rm $1.tex
 docker exec converter rm $1.pdf
 docker exec converter rm $1.tiff
