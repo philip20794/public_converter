@@ -18,4 +18,41 @@ else
     docker exec converter apt-get -y install tesseract-ocr-deu
 fi
 
+# Check if all is installed
+docker exec converter abiword --version
+if [ $? -eq 0 ]; then
+    echo Abiword is installed
+else
+    echo Installing Abiword
+    docker exec converter apt-get -y install abiword
+fi
+
+docker exec converter pandoc --version
+if [ $? -eq 0 ]; then
+    echo Pandoc is installed
+else
+    echo Installing Pandoc
+    docker exec converter apt-get -y install pandoc
+fi
+
+docker exec converter convert --version
+if [ $? -eq 0 ]; then
+    echo Poppler-utils are installed
+else
+    echo Installing Poppler-utils
+    docker exec converter apt-get -y install poppler-utils
+fi
+
+docker exec converter tesseract --version
+if [ $? -eq 0 ]; then
+    echo Tesseract is installed
+else
+    echo Installing Tesseract
+    docker exec converter apt-get -y install tesseract-ocr
+    docker exec converter apt-get -y install tesseract-ocr-deu
+fi
+
+
+
+
 
