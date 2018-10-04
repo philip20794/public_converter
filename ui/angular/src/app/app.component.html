@@ -1,0 +1,63 @@
+<!--The content below is only a placeholder and can be replaced.-->
+
+<mat-grid-list cols="1" rowHeight="100px">
+  <mat-grid-tile class="top">
+    <div class="logo">
+      <img [src]="logo_ag" layout-fill>
+    </div>
+    <div class="logout">
+      <app-logout></app-logout>
+    </div>
+  </mat-grid-tile>
+  <mat-grid-tile *ngIf="error">
+    <mat-card class="error">
+      <mat-card-title>
+        {{errorMessage}}
+      </mat-card-title>
+    </mat-card>
+  </mat-grid-tile>
+  <mat-grid-tile [rowspan]="6">
+    <mat-card class="out" [ngStyle]="{'background-image': 'url(' + logo + ')'}">
+      <mat-card class="inner mat-elevation-z0">
+        <form novalidate >
+          <mat-card-title>Converter</mat-card-title>
+          <mat-card-subtitle>{{message}}</mat-card-subtitle>
+          <mat-card-content>
+            <mat-vertical-stepper [linear]="true" #stepper>
+              <ng-template matStepperIcon="edit">
+                <mat-icon>check</mat-icon>
+              </ng-template>
+              <mat-step [stepControl]="firstFormGroup">
+                <form [formGroup]="firstFormGroup">
+                  <ng-template matStepLabel>Upload</ng-template>
+                  <app-upload (changeFileNameEvent)="changeFileName($event, stepper)" (changeFileUploadedEvent)="changeFileUploaded($event, stepper)"
+                              (changeFileConvertedEvent)="changeFileConverted($event)" (errorEvent)="showError($event)"></app-upload>
+                </form>
+              </mat-step>
+              <ng-template matStepperIcon="edit">
+                <mat-icon>check</mat-icon>
+              </ng-template>
+              <mat-step [stepControl]="secondFormGroup">
+                <form [formGroup]="secondFormGroup">
+                  <ng-template matStepLabel>Convert</ng-template>
+                  <app-convert (changeFileConvertedEvent)="changeFileConverted($event)" [fileName]="fileName"
+                               (errorEvent)="showError($event)"></app-convert>
+                </form>
+              </mat-step>
+              <ng-template matStepperIcon="edit">
+                <mat-icon>check</mat-icon>
+              </ng-template>
+              <mat-step [stepControl]="thirdFormGroup">
+                <form [formGroup]="thirdFormGroup">
+                  <ng-template matStepLabel>Download</ng-template>
+                  <app-download [fileName]="fileName"></app-download>
+                </form>
+              </mat-step>
+            </mat-vertical-stepper>
+          </mat-card-content>
+        </form>
+      </mat-card>
+    </mat-card>
+  </mat-grid-tile>
+</mat-grid-list>
+
