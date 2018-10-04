@@ -35,7 +35,7 @@ export class AppComponent implements OnInit {
 
   ngOnInit() {
     this.logo = '../assets/images/Adesso_logo.png';
-    this.logo_ag = '../assets/images/Adesso_AG_logo.png';
+    this.logo_ag = '../assets/images/adesso_ag_logo.png';
     this.fileUploaded = false;
     this.error = false;
     this.fileName = "";

@@ -1,6 +1,7 @@
 img{
-  width: auto;
-  max-height: 100px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  height: 80px;
 }
 
 mat-grid-tile.top{
@@ -13,8 +14,11 @@ mat-card.error{
   text-align: center;
 }
 div.logo{
-  position: absolute;
-  left: 5px;
+  background-color: #e8e4e1;
+  height: 100px;
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% calc(100% - 30px), 230px calc(100% - 30px), 200px 100%, 0 100%);
+  clip-path: polygon(0 0, 100% 0, 100% calc(100% - 30px), 230px calc(100% - 30px), 200px 100%, 0 100%);
+  margin-bottom: 20px;
 }
 div.logout{
   position: absolute;

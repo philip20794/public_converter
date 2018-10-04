@@ -1,14 +1,8 @@
 <!--The content below is only a placeholder and can be replaced.-->
-
+<div class="logo">
+  <img [src]="logo_ag">
+</div>
 <mat-grid-list cols="1" rowHeight="100px">
-  <mat-grid-tile class="top">
-    <div class="logo">
-      <img [src]="logo_ag" layout-fill>
-    </div>
-    <div class="logout">
-      <app-logout></app-logout>
-    </div>
-  </mat-grid-tile>
   <mat-grid-tile *ngIf="error">
     <mat-card class="error">
       <mat-card-title>
