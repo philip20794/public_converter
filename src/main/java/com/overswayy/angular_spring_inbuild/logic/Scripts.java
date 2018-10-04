@@ -8,14 +8,14 @@ public class Scripts {
 
     public static void dockerInit() throws Exception{
         String command = ".\\scripts\\init.bat";
-        String command_linux = "sudo bash ..\\scripts\\init.sh";
+        String command_linux = "sudo bash scripts/init.sh";
         checkDockerState();
         runCommand(command_linux, "Can't create Docker-Container");
     }
 
     public static void dockerConvert(String fileName) throws Exception{
         String command = ".\\scripts\\convert.bat " + fileName;
-        String command_linux = "sudo bash ..\\scripts\\convert.sh " + fileName;
+        String command_linux = "sudo bash scripts/convert.sh " + fileName;
         checkDockerState();
         runCommand(command_linux, "File has a bad Format");
     }
