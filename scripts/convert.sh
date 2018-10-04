@@ -7,6 +7,9 @@ else
     echo No $1 files exist on resources/generated_files
 fi
 
+echo upload-dir:
+ls -la ../upload-dir
+
 docker exec converter rm $1.pdf
 docker exec converter rm $1.tex
 docker exec converter rm $1.txt
@@ -45,7 +48,6 @@ if [ $? -eq 0 ]; then
     fi
 else
     echo $1 dosent exist on upload-dir.
-    bash convert.sh
 fi
 
 
