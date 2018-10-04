@@ -21,7 +21,7 @@ public class Scripts {
         checkDockerState();
         runCommand(command_linux, "File has a bad Format");
     }
-    
+
 
     private static void checkDockerState() throws Exception{
           String command = "sudo docker ps";
