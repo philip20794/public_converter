@@ -50,7 +50,7 @@ public class WebController{
         } catch (Exception e) {
             System.out.println(e.getMessage());
           System.out.println("Uploading Error");
-            return ResponseEntity.badRequest().body("Uploading Error");
+            return ResponseEntity.badRequest().body("");
         }
 
     }
@@ -65,7 +65,7 @@ public class WebController{
         } catch (Exception e) {
             System.out.println(e.getMessage());
           System.out.println("Converting Error");
-            return ResponseEntity.badRequest().body("Converting Error");
+            return ResponseEntity.badRequest().body("");
         }
     }
 
@@ -102,7 +102,7 @@ public class WebController{
         }catch (Exception e){
             System.out.println(e.getMessage());
           System.out.println("Unexpected Error");
-            return ResponseEntity.badRequest().body("Unexpected Error");
+            return ResponseEntity.badRequest().body("");
         }
     }
 

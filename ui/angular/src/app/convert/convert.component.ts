@@ -34,7 +34,7 @@ export class ConvertComponent implements OnInit {
     this.spinnerService.show();
     this.requestService.convert(this.http, this.fileName)
       .pipe(catchError(err => {
-        this.errorEvent.emit(err.error);
+        this.errorEvent.emit("Error while converting file");
         this.spinnerService.hide();
         return this.error.handleError(err);
       }))

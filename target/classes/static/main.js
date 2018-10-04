@@ -350,7 +350,7 @@ var ConvertComponent = /** @class */ (function () {
         this.spinnerService.show();
         this.requestService.convert(this.http, this.fileName)
             .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["catchError"])(function (err) {
-            _this.errorEvent.emit(err.error);
+            _this.errorEvent.emit("Error while converting file");
             _this.spinnerService.hide();
             return _this.error.handleError(err);
         }))
@@ -750,7 +750,7 @@ var UploadComponent = /** @class */ (function () {
         this.changeFileNameEvent.emit(this.fileName);
         this.requestService.uploadFile(this.http, file)
             .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["catchError"])(function (err) {
-            _this.errorEvent.emit(err.statusText);
+            _this.errorEvent.emit("Error while uploading file");
             return _this.error.handleError(err);
         }))
             .subscribe(function (response) {
